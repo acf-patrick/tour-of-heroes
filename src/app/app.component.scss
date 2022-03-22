@@ -1,5 +1,13 @@
 @import 'animation';
 
+@font-face {
+    font-family: Roboto;
+    src: url('../assets/fonts/Roboto/Roboto-Medium.ttf');
+}
+
+* {
+    font-family: Roboto, system-ui;
+}
 
 h1 {
     color: #333333;
@@ -9,7 +17,7 @@ h1 {
 svg {
     width: 32px;
     fill: #2b2b2b;
-    animation: 500ms $header-duration*3/2 2 ease alternate-reverse iron-head;
+    animation: 500ms $header-duration*3/2 2 cubic-bezier(0.32, 0.39, 0, 1.18) alternate-reverse iron-head;
     .st0{
         fill-rule:evenodd;
         clip-rule:evenodd;
