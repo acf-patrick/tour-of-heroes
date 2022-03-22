@@ -1,5 +1,11 @@
+@import '../animation';
+
 h1 {
     color: rgb(110, 110, 110);
+}
+
+.content {
+    animation: $header-duration/2 $header-duration ease-out backwards hero-list-slide;
 }
 
 .id {
@@ -13,15 +19,20 @@ h1 {
 
 li {
     transition: transform 300ms;
-    width: 20%;
+    width: 25%;
     overflow: auto;
+    
     &:hover {
         :nth-child(2) {
             color: #ededed;
             background: #444444;
         }
         cursor: pointer;
-        transform: translateY(-5px);
+        transform: translate(2px, -5px);
         box-shadow: 0 5px 5px rgba(73, 73, 73, 0.563);
+    }
+
+    &:active .name {
+        background: rgb(139, 139, 139);
     }
 }
