@@ -1,0 +1,35 @@
+@keyframes spawn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.dashboard {
+  animation: spawn 1s ease-out;
+}
+
+h2 {
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+}
+
+.heroes-menu {
+  display: flex;
+  gap: 0.5rem;
+
+  a {
+    padding: 1rem 1rem;
+    text-align: center;
+    color: rgb(223, 223, 223);
+    background: hsl(0, 0%, 37%);
+    width: 100%;
+    border-radius: 5px;
+    transition: all 500ms ease-out;
+
+    &:hover {
+      background: hsl(0, 0%, 55%);
+      cursor: pointer;
+    }
+  }
+}

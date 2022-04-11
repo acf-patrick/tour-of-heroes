@@ -1,25 +1,57 @@
-@import 'animation';
+@import "animation";
 
 @font-face {
-    font-family: Roboto;
-    src: url('../assets/fonts/Roboto/Roboto-Medium.ttf');
+  font-family: Roboto;
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf");
 }
 
 * {
-    font-family: Roboto, system-ui;
+  font-family: Roboto, system-ui;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
-    color: #333333;
-    animation: $header-duration ease-out backwards header-slide;
+  color: #333333;
+  font-weight: bold;
+  animation: $header-duration ease-out backwards header-slide;
 }
 
 svg {
-    width: 32px;
-    fill: #2b2b2b;
-    animation: 500ms $header-duration*3/2 2 cubic-bezier(0.32, 0.39, 0, 1.18) alternate-reverse iron-head;
-    .st0{
-        fill-rule:evenodd;
-        clip-rule:evenodd;
+  width: 32px;
+  fill: #2b2b2b;
+  animation: 500ms $header-duration * 3/2 2 cubic-bezier(0.32, 0.39, 0, 1.18)
+    alternate-reverse iron-head;
+  .st0 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+  }
+}
+
+main {
+  max-width: 480px;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+
+  & > a {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(83, 83, 83);
+    background: rgb(221, 221, 221);
+    border-radius: 5px;
+    transition: all 500ms ease-out;
+
+    &:hover {
+      background: hsl(0, 0%, 60%);
     }
+  }
 }

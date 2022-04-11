@@ -1,4 +1,4 @@
-<div *ngIf="hero">
+<div *ngIf="hero" [ngClass]="_class">
     <div>
         <h1 class="h4">{{ hero.name | uppercase }} Details</h1>
         <p><span>ID : </span>{{ hero.id }}</p>
