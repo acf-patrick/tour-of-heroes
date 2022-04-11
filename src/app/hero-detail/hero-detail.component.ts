@@ -1,29 +1,41 @@
+import { Location } from '@angular/common';
 import {
   Component,
   OnInit,
   Input,
-  OnChanges,
-  SimpleChanges,
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import Hero from '../hero';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.scss'],
 })
-export class HeroDetailComponent implements OnInit, OnChanges {
+export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
-  _class: string = '';
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getHero();
+  }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this._class = '';
-    setTimeout(() => {
-      this._class = 'detail-slide';
-    }, 0);
+  getHero(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(id);
+    
+    this.heroService
+      .getHero(id)
+      .subscribe((hero) => (this.hero = hero));
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

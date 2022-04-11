@@ -1,5 +1,16 @@
-@import '../animation';
+@import "../animation";
+
+.detail {
+    animation: slide-kf 300ms ease-out;
+    margin-top: 1rem;
+}
 
 h1 {
-    color: #6e6e6e;
+  color: #6e6e6e;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
 }

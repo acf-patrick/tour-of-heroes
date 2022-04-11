@@ -21,20 +21,24 @@ h1 {
 }
 
 li {
-  transition: transform 300ms;
-  overflow: auto;
+  a {
+    transition: transform 300ms;
+    font-size: 1.2rem;
+    color: rgb(80, 80, 80);
+    text-decoration: none;
 
-  &:hover {
-    :nth-child(2) {
-      color: #ededed;
-      background: #444444;
+    &:hover {
+      :nth-child(2) {
+        color: #ededed;
+        background: #444444;
+      }
+      cursor: pointer;
+      transform: translate(2px, -5px);
+      box-shadow: 0 5px 5px rgba(73, 73, 73, 0.563);
     }
-    cursor: pointer;
-    transform: translate(2px, -5px);
-    box-shadow: 0 5px 5px rgba(73, 73, 73, 0.563);
-  }
 
-  &:active .name {
-    background: rgb(139, 139, 139);
+    &:active .name {
+      background: rgb(139, 139, 139);
+    }
   }
 }

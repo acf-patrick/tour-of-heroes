@@ -23,8 +23,8 @@
       </svg>
     </h1>
     <nav>
-      <a routerLink="/dashboard">Dashboard</a>
-      <a routerLink="/heroes">Heroes</a>
+      <a routerLink="/dashboard" (click)="current = 'dashboard'" [class.active]="current==='dashboard'">Dashboard</a>
+      <a routerLink="/heroes" (click)="current = 'heroes'" [class.active]="current === 'heroes'">Heroes</a>
     </nav>
     <router-outlet></router-outlet>
   </main>

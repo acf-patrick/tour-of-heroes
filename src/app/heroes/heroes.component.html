@@ -3,13 +3,13 @@
   <ul class="heroes list-unstyled d-flex flex-wrap justify-content-between">
     <li
       role="button"
-      class="m-2 d-flex w-100"
+      class="m-2 w-100"
       *ngFor="let hero of heroes"
-      (click)="onSelect(hero)"
-      [class.selected]="hero === selectedHero"
     >
-      <span class="p-2 px-3 rounded-start id">{{ hero.id }}</span>
-      <span class="w-100 p-2 px-3 rounded-end name">{{ hero.name }}</span>
+      <a class="d-flex w-100" routerLink="/detail/{{hero.id}}">
+        <span class="p-2 px-3 rounded-start id">{{ hero.id }}</span>
+        <span class="w-100 p-2 px-3 rounded-end name">{{ hero.name }}</span>
+      </a>
     </li>
   </ul>
 </div>
